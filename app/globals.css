@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,6 +85,63 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-variation-settings: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Improved typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Code blocks */
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  }
+  
+  /* Better line heights */
+  p {
+    line-height: 1.7;
+  }
+  
+  /* Improved spacing */
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose h1 {
+    @apply text-3xl md:text-4xl font-bold mb-6 leading-tight;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-semibold mt-10 mb-4 leading-tight;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-semibold mt-8 mb-3 leading-tight;
+  }
+  
+  .prose p {
+    @apply leading-relaxed mb-4;
+  }
+  
+  .prose ul {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+  
+  .prose li {
+    @apply leading-relaxed;
   }
 }
