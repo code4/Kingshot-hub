@@ -1,0 +1,8 @@
+# .gitignore
+node_modules
+.next
+.out
+dist
+.vercel
+.DS_Store
+.env*
