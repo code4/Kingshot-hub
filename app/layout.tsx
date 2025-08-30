@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import Script from 'next/script'
 import './globals.css';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
+import GAListener from './ga-listener';
 
 export const metadata: Metadata = {
   title: 'Kingshot Hub',
@@ -10,9 +12,30 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
   return (
     <html lang="en">
+      <head>
+        {GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { anonymize_ip: true });
+              `}
+            </Script>
+          </>
+        ) : null}
+      </head>
       <body className="min-h-screen bg-background text-foreground">
+        <GAListener />
         <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
             <Link href="/" className="font-bold text-primary text-lg">Kingshot Hub</Link>
