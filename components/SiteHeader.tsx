@@ -117,7 +117,7 @@ function MobileNav() {
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-b-primary bg-background shadow-sm">
+    <header className="sticky top-0 z-50 bg-background border-b shadow-sm header-accent">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="font-semibold tracking-tight text-primary text-base sm:text-lg">
           Kingshot Hub

@@ -39,6 +39,10 @@ export default function RootLayout({
             </Script>
           </>
         ) : null}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
+        <meta name="color-scheme" content="light dark" />
       </head>
       <body className="min-h-screen bg-background text-foreground">
         <Suspense fallback={null}>
