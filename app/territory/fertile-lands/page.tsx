@@ -3,6 +3,9 @@ import { Badge } from '@/components/ui/badge';
 import { Map, Target, Users, Zap, Shield } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CopyableNotice from '@/components/CopyableNotice';
+import VoteWidget from "@/components/VoteWidget";
+import Comments from "@/components/Comments";
+import EditBar from "@/components/EditBar";
 
 export default function FertileLandsPage() {
   return (
@@ -228,6 +231,9 @@ export default function FertileLandsPage() {
           <p>We're expanding into Fertile Lands! Use alliance teleport to move next to the leader. Don't miss out on T8+ resources, faster gathering, and prestige buffs. More members inside = bigger bonuses for everyone.</p>
         </div>
       </CopyableNotice>
+      <VoteWidget slug="fertile-lands" />
+      <Comments />
+      <EditBar filePath="app/territory/fertile-lands/page.tsx" title="Fertile Lands Territory Guide" />
     </div>
   );
 }

@@ -3,6 +3,9 @@ import { Badge } from '@/components/ui/badge';
 import { Sword, Users, Target, Zap, CheckCircle, XCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CopyableNotice from '@/components/CopyableNotice';
+import VoteWidget from "@/components/VoteWidget";
+import Comments from "@/components/Comments";
+import EditBar from "@/components/EditBar";
 
 export default function RallyRulesPage() {
   return (
@@ -159,6 +162,9 @@ export default function RallyRulesPage() {
           <p>Joiners contribute only slot‑1 top‑right skill; leaders contribute all their heroes' skills. Use Chenko/Yeonwoo/Amadeus for Bear/Terrors; Diana/Quinn for PvP; Gordon/Howard for defence.</p>
         </div>
       </CopyableNotice>
+      <VoteWidget slug="rally-rules" />
+      <Comments />
+      <EditBar filePath="app/mechanics/rally-rules/page.tsx" title="Rally Rules & Mechanics" />
     </div>
   );
 }

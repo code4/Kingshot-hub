@@ -3,6 +3,9 @@ import { Badge } from '@/components/ui/badge';
 import { Sword, Users, Zap, Heart, Target } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CopyableNotice from '@/components/CopyableNotice';
+import VoteWidget from "@/components/VoteWidget";
+import Comments from "@/components/Comments";
+import EditBar from "@/components/EditBar";
 
 export default function TerrorsPage() {
   return (
@@ -137,6 +140,9 @@ export default function TerrorsPage() {
           <p>Rally Terrors instead of solo; use Chenko/Yeonwoo/Amadeus as leaders; joiners slot‑1 the same heroes or send no hero; check stamina and infirmary space before rallying.</p>
         </div>
       </CopyableNotice>
+      <VoteWidget slug="terrors" />
+      <Comments />
+      <EditBar filePath="app/events/terrors/page.tsx" title="Terrors" />
     </div>
   );
 }

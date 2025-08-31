@@ -3,6 +3,9 @@ import { Badge } from '@/components/ui/badge';
 import { Shield, Users, Flame, Target, Clock } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CopyableNotice from '@/components/CopyableNotice';
+import VoteWidget from "@/components/VoteWidget";
+import Comments from "@/components/Comments";
+import EditBar from "@/components/EditBar";
 
 export default function VikingVengeancePage() {
   return (
@@ -147,6 +150,9 @@ export default function VikingVengeancePage() {
           <p>Vikings tonight! Split troops into four marches; buddy up with 4–5 mates; don't heal mid-event; first burn extinguish, second burn out. Reinforcement heroes: Chenko/Yeonwoo/Amadeus/Amane.</p>
         </div>
       </CopyableNotice>
+      <VoteWidget slug="viking-vengeance" />
+      <Comments />
+      <EditBar filePath="app/events/viking-vengeance/page.tsx" title="Viking Vengeance" />
     </div>
   );
 }

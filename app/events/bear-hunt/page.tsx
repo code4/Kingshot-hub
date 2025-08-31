@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Copy, Check, Sword, Users, Target, Clock } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CopyableNotice from '@/components/CopyableNotice';
+import VoteWidget from "@/components/VoteWidget";
+import Comments from "@/components/Comments";
+import EditBar from "@/components/EditBar";
 
 export default function BearHuntPage() {
   return (
@@ -125,6 +128,9 @@ export default function BearHuntPage() {
           <p>Bear Hunt at <strong>23:00 UTC</strong> – rally leaders use Chenko/Yeonwoo/Amadeus. Joiners slot‑1 Chenko/Yeonwoo/Amadeus/Amane (or no hero). Aim for 10/10/80 troop mix if possible.</p>
         </div>
       </CopyableNotice>
+      <VoteWidget slug="bear-hunt" />
+      <Comments />
+      <EditBar filePath="app/events/bear-hunt/page.tsx" title="Bear Hunt" />
     </div>
   );
 }

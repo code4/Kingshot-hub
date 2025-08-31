@@ -3,6 +3,9 @@ import { Badge } from '@/components/ui/badge';
 import { Sword, Target, Users, Star } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CopyableNotice from '@/components/CopyableNotice';
+import VoteWidget from "@/components/VoteWidget";
+import Comments from "@/components/Comments";
+import EditBar from "@/components/EditBar";
 
 export default function ChenkoPage() {
   return (
@@ -117,6 +120,9 @@ export default function ChenkoPage() {
           <p>Join with <strong>Chenko slot‑1</strong> (or Yeonwoo/Amadeus). Wrong hero lowers rally damage for everyone.</p>
         </div>
       </CopyableNotice>
+      <VoteWidget slug="chenko" />
+      <Comments />
+      <EditBar filePath="app/heroes/chenko/page.tsx" title="Chenko" />
     </div>
   );
 }

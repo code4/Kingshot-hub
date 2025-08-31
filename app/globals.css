@@ -26,57 +26,79 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* Higher-contrast, less-grey light theme */
+    --background: 0 0% 99%;          /* near-white */
+    --foreground: 240 10% 5%;        /* almost-black */
+
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 240 10% 5%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --popover-foreground: 240 10% 5%;
+
+    /* Brand: royal purple + gold accent */
+    --primary: 262 83% 55%;          /* royal purple */
+    --primary-foreground: 0 0% 100%;
+    --accent: 42 95% 55%;            /* gold */
+    --accent-foreground: 240 10% 5%;
+
+    /* Subtle tints instead of flat grey */
+    --secondary: 260 20% 97%;        /* purple-tinted surface */
+    --secondary-foreground: 240 10% 10%;
+    --muted: 260 20% 96%;            /* for muted chips / code bg */
+    --muted-foreground: 240 6% 35%;
+
+    /* Feedback */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs a bit darker for contrast */
+    --border: 240 6% 85%;
+    --input: 240 6% 85%;
+    --ring: 262 83% 55%;
+
+    /* Charts (optional) */
+    --chart-1: 262 83% 55%;
+    --chart-2: 160 63% 45%;
+    --chart-3: 28 90% 55%;
+    --chart-4: 200 90% 45%;
+    --chart-5: 42 95% 55%;
+
+    --radius: 0.6rem;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
+    /* Dark with real depth (not grey soup) */
+    --background: 240 8% 10%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+
+    --card: 240 8% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 240 8% 12%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+
+    --primary: 262 90% 70%;          /* brighter purple for dark */
+    --primary-foreground: 262 100% 12%;
+
+    --accent: 45 100% 60%;           /* warm gold */
+    --accent-foreground: 240 8% 12%;
+
+    --secondary: 260 18% 18%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 260 18% 16%;
+    --muted-foreground: 0 0% 70%;
+
+    --destructive: 0 72% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+
+    --border: 240 7% 22%;
+    --input: 240 7% 22%;
+    --ring: 262 90% 70%;
+
+    --chart-1: 262 90% 70%;
+    --chart-2: 160 63% 52%;
+    --chart-3: 28 90% 60%;
+    --chart-4: 200 90% 55%;
+    --chart-5: 45 100% 60%;
   }
 }
 
@@ -144,4 +166,8 @@
   .prose li {
     @apply leading-relaxed;
   }
+
+  .prose a { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; }
+  .prose a:hover { color: hsl(var(--accent)); }
+
 }
